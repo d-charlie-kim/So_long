@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:47:10 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/18 10:47:11 by dokkim           ###   ########.fr       */
+/*   Updated: 2021/07/27 16:37:20 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_strcmp(char *str, char *str2)
 	while (j >= 0)
 	{
 		if (str[i] != str2[j])
-			ft_error("Error : Map file is not valid\n");
+			ft_error("Error : Map file is not valid");
 		i--;
 		j--;
 	}
@@ -43,4 +43,26 @@ void	ft_putstr(char *str, int fd)
 		i++;
 	}
 	write(1, "\n", 1);
+}
+
+void	map_member_init(t_map_member *map_member)
+{
+	map_member->width = 0;
+	map_member->height = 0;
+	map_member->zero = 0;
+	map_member->collectable = 0;
+	map_member->player = 0;
+	map_member->exit = 0;
+}
+
+void	images_init(t_images *images)
+{
+	images->mlx = NULL;
+	images->win = NULL;
+	images->wall = NULL;
+	images->road = NULL;
+	images->player = NULL;
+	images->collectable = NULL;
+	images->enemy = NULL;
+	images->exit = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:52:32 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/17 19:19:19 by dokkim           ###   ########.fr       */
+/*   Updated: 2021/07/25 14:37:19 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	mapping(char **argv, t_map **so_map, t_map_member *map_member)
 	ft_strcmp(argv[1], ".ber");
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-		ft_error("OPEN ERROR\n");
+		ft_error("OPEN ERROR");
 	while (get_next_line(fd, &str))
 	{
 		temp->line = str;
@@ -34,7 +34,7 @@ void	mapping(char **argv, t_map **so_map, t_map_member *map_member)
 		temp->width = ft_strlen(str);
 		temp->next = (t_map *)malloc(sizeof(t_map));
 		if (!(temp->next))
-			ft_error("Malloc Error\n");
+			ft_error("Malloc Error");
 		temp = temp->next;
 		temp->next = NULL;
 		str = NULL;
@@ -50,7 +50,7 @@ void	ft_lst_add(t_map **lst)
 {
 	*lst = (t_map *)malloc(sizeof(t_map));
 	if (!(lst))
-		ft_error("Malloc Error\n");
+		ft_error("Malloc Error");
 	(*lst)->line = NULL;
 	(*lst)->next = NULL;
 	(*lst)->width = 0;

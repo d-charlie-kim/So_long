@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 06:03:55 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/27 17:35:29 by dokkim           ###   ########seoul.kr  */
+/*   Created: 2021/07/25 14:47:19 by dokkim            #+#    #+#             */
+/*   Updated: 2021/07/25 17:19:42 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./so_long.h"
+#include "../so_long.h"
 
-int main(int argc, char **argv)
+void	draw_images()
 {
-	t_map			*so_map;
-	t_map_member	map_member;
-	t_images		images;
+	키가 왼쪽이면 그거고
+	오른쪽이면
+	위쪽이면
+	아래쪽이면
+	
+	ESC 누르면
+}
 
-	if (argc != 2)
-		ft_error("Error : Argument error");
-	map_member_init(&map_member);
-	images_init(&images);
-	mapping(argv, &so_map, &map_member);
-	draw(&so_map, &map_member, &images);
-	mlx_loop(images.mlx);
-	return (0);
+void	collect()
+{
+	collect 먹으면 여기서
 }

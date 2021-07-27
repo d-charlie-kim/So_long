@@ -6,22 +6,12 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:58:58 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/18 10:58:59 by dokkim           ###   ########.fr       */
+/*   Updated: 2021/07/27 16:33:44 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 #include "../get_next_line/get_next_line.h"
-
-void	map_member_init(t_map_member *map_member)
-{
-	map_member->width = 0;
-	map_member->height = 0;
-	map_member->zero = 0;
-	map_member->collectable = 0;
-	map_member->player = 0;
-	map_member->exit = 0;
-}
 
 void	put_map_member(t_map_member *map_member, t_map **so_map)
 {
@@ -43,7 +33,7 @@ void	put_map_member(t_map_member *map_member, t_map **so_map)
 			else if ((temp->line)[i] == '0')
 				map_member->zero++;
 			else if ((temp->line)[i] != '1')
-				ft_error("Error : Map should be consist of [C P E 0 1]\n");
+				ft_error("Error : Map should be consist of [C P E 0 1]");
 			i++;
 		}
 		temp = temp->next;
@@ -58,7 +48,7 @@ void	map_is_rectangular(t_map_member	*map_member, t_map **so_map)
 	while (temp->next != NULL)
 	{
 		if (temp->width != temp->next->width)
-			ft_error("Error : Map is not rectangular\n");
+			ft_error("Error : Map is not rectangular");
 		temp = temp->next;
 	}
 	map_member->width = (*so_map)->width;
@@ -87,12 +77,12 @@ void	map_is_surrounded(t_map_member *map_member, t_map **so_map)
 			while (i < map_member->width)
 			{
 				if ((temp->line)[i] != '1')
-					ft_error("Error : Map is not surrounded by wall\n");
+					ft_error("Error : Map is not surrounded by wall");
 				i++;
 			}
 		}
 		else if ((temp->line)[0] != '1' || (temp->line)[map_member->width - 1] != '1')
-			ft_error("Error : Map is not surrounded by wall\n");
+			ft_error("Error : Map is not surrounded by wall");
 		temp = temp->next;
 		n++;
 	}
@@ -104,11 +94,11 @@ void	map_is_valid(t_map_member *map_member)
 	|| map_member->player < 1 \
 	|| map_member->exit < 1 \
 	|| map_member->zero < 1)
-		ft_error("Error : Map is not valid\n");
+		ft_error("Error : Map is not valid");
 }
 
 void	ft_error(char *str)
 {
-	ft_putstr(str, 2);
+	printf("%s\n", str);
 	exit(-1);
 }
