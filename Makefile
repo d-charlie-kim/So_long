@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/10 18:38:34 by jaejeong          #+#    #+#              #
-#    Updated: 2021/07/25 09:08:50 by dokkim           ###   ########seoul.kr   #
+#    Updated: 2021/07/29 15:55:19 by dokkim           ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS		= ./so_long.c\
 			  ./map/map_check.c\
 			  ./map/map_utils.c\
 			  ./map/mapping.c\
+			  ./move/move.c
 
 OBJS	= $(SRCS:.c=.o)
 

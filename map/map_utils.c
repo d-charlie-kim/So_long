@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:47:10 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/27 16:37:20 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/29 16:29:06 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ void	map_member_init(t_map_member *map_member)
 	map_member->collectable = 0;
 	map_member->player = 0;
 	map_member->exit = 0;
+	map_member->walk_count = 0;
+	map_member->collect_count = 0;
+	map_member->player_x = 0;
+	map_member->player_y = 0;
 }
 
 void	images_init(t_images *images)
@@ -62,7 +66,9 @@ void	images_init(t_images *images)
 	images->wall = NULL;
 	images->road = NULL;
 	images->player = NULL;
-	images->collectable = NULL;
+	images->collectable1 = NULL;
+	images->collectable2 = NULL;
+	images->collectable3 = NULL;
 	images->enemy = NULL;
 	images->exit = NULL;
 }

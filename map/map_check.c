@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:58:58 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/27 16:33:44 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/29 12:01:23 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	map_is_surrounded(t_map_member *map_member, t_map **so_map)
 void	map_is_valid(t_map_member *map_member)
 {
 	if (map_member->collectable < 1 \
-	|| map_member->player < 1 \
+	|| map_member->player != 1 \
 	|| map_member->exit < 1 \
 	|| map_member->zero < 1)
 		ft_error("Error : Map is not valid");
