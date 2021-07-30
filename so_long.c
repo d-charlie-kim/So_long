@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 06:03:55 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/30 18:35:23 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/30 19:32:45 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 	data.images = images;
 	data.map_member = map_member;
 	mlx_key_hook(images.win, move, &data);
-	mlx_mouse_hook(images.win, x_icon, &data);
+	// mlx_mouse_hook(images.win, x_icon, &data);
+	mlx_hook(images.win, 17, 0, x_icon, &data);
 	mlx_loop(images.mlx);
 	return (0);
 }

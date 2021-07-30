@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:18:14 by dokkim            #+#    #+#             */
-/*   Updated: 2021/06/12 16:40:47 by dokkim           ###   ########.fr       */
+/*   Updated: 2021/07/30 19:04:01 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,4 +120,5 @@ int	get_next_line(int fd, char **line)
 	}
 	free(save);
 	ft_error("GNL ERROR\n");
+	return (-1);
 }

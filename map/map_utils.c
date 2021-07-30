@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:47:10 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/29 16:29:06 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/30 19:06:35 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	images_init(t_images *images)
 {
 	images->mlx = NULL;
 	images->win = NULL;
-	images->wall = NULL;
+	images->wall1 = NULL;
+	images->wall2 = NULL;
 	images->road = NULL;
 	images->player = NULL;
 	images->collectable1 = NULL;

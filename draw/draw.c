@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 20:40:36 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/29 17:29:19 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/30 19:07:07 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	get_images(t_images *images, t_map_member *map_member)
 {
 	images->mlx = mlx_init();
 	// images->win = (images->mlx, map_member->width * images->width, map_member->height * images->height, "DOKKIM_SO_LONG");
-	images->wall = mlx_xpm_file_to_image(images->mlx, "./images/wall1.xpm", &images->width, &images->height);
+	images->wall1 = mlx_xpm_file_to_image(images->mlx, "./images/wall1.xpm", &images->width, &images->height);
+	images->wall2 = mlx_xpm_file_to_image(images->mlx, "./images/wall2.xpm", &images->width, &images->height);
 	images->road = mlx_xpm_file_to_image(images->mlx, "./images/road.xpm", &images->width, &images->height);
 	images->player = mlx_xpm_file_to_image(images->mlx, "./images/dao_front1.xpm", &images->width, &images->height);
 	images->collectable1 = mlx_xpm_file_to_image(images->mlx, "./images/collect_ballon.xpm", &images->width, &images->height);
@@ -75,7 +76,13 @@ void	draw_contents(t_map **so_map, t_map_member *map_member, t_images *images)
 			else if ((map_temp->line)[i] == 'E')
 				mlx_put_image_to_window(images->mlx, images->win, images->exit, dx, dy);
 			else if ((map_temp->line)[i] == '1')
-				mlx_put_image_to_window(images->mlx, images->win, images->wall, dx, dy);
+			{
+				if ((i % 2) == 0)
+					mlx_put_image_to_window(images->mlx, images->win, images->wall1, dx, dy);
+				if ((i % 2) == 1)
+					mlx_put_image_to_window(images->mlx, images->win, images->wall2, dx, dy);
+					
+			}
 			dx = dx + images->width;
 			i++;
 		}

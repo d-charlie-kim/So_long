@@ -6,21 +6,17 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 14:47:19 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/30 18:46:46 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/30 19:37:49 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int		x_icon(int keycode, int x, int y, t_data *data)
+int		x_icon(int keycode, t_data *data)
 {
-	printf(" x : %d y : %d\n", x, y);
-	if (x >= 7 && x <= 20 && y >= -22 && y <= -7)
-	{
-		mlx_destroy_window(data->images.mlx, data->images.win);
-		printf("END\n");
-		exit(0);
-	}
+	// mlx_destroy_window(data->images.mlx, data->images.win);
+	printf("END\n");
+	exit(0);
 	return (0);
 }
 

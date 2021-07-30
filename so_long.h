@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:46:27 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/30 18:35:29 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/30 19:37:10 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ typedef struct s_images
 {
 	void	*mlx;
 	void	*win;
-	void	*wall;
+	void	*wall1;
+	void	*wall2;
 	void	*road;
 	void	*player;
 	void	*collectable1;
@@ -99,6 +100,6 @@ void	move_right(t_data *data);
 void	move_down(t_data *data);
 void	move_up(t_data *data);
 
-int		x_icon(int keycode, int x, int y, t_data *data);
+int		x_icon(int keycode, t_data *data);
 
 #endif
