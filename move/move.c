@@ -6,28 +6,40 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 14:47:19 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/29 21:20:53 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/30 18:46:46 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
+int		x_icon(int keycode, int x, int y, t_data *data)
+{
+	printf(" x : %d y : %d\n", x, y);
+	if (x >= 7 && x <= 20 && y >= -22 && y <= -7)
+	{
+		mlx_destroy_window(data->images.mlx, data->images.win);
+		printf("END\n");
+		exit(0);
+	}
+	return (0);
+}
+
 int		move(int keycode, t_data *data)
 {
-	if (keycode == 53) //ESC
+	if (keycode == 53)
 	{
 		// mlx_destroy_image(data->images.mlx, data->images.img);
 		mlx_destroy_window(data->images.mlx, data->images.win);
 		printf("END\n");
 		exit(0);
 	}
-	else if (keycode == 123) //LEFT
+	else if (keycode == LEFT)
 		move_left(data);
-	else if (keycode == 124) //RIGHT
+	else if (keycode == RIGHT)
 		move_right(data);
-	else if (keycode == 125) //DOWN
+	else if (keycode == DOWN)
 		move_down(data);
-	else if (keycode == 126) //UP
+	else if (keycode == UP)
 		move_up(data);
 	draw_contents(&(data->so_map), &(data->map_member), &(data->images));
 	return (0);

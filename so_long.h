@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:46:27 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/29 16:28:48 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/07/30 18:35:29 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # include <math.h>
 # include "./minilibx_mms_20200219/mlx.h"
 
-# define ESC = 53;
-# define LEFT = 123;
-# define RIGHT = 124;
-# define DOWN = 125;
-# define UP = 126;
+# define ESC 53
+# define LEFT 0
+# define RIGHT 2
+# define DOWN 1
+# define UP 13
 
 typedef struct s_map
 {
@@ -98,5 +98,7 @@ char	get_map_contents(t_data *data, int dx, int dy);
 void	move_right(t_data *data);
 void	move_down(t_data *data);
 void	move_up(t_data *data);
+
+int		x_icon(int keycode, int x, int y, t_data *data);
 
 #endif
