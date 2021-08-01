@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:46:27 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/30 19:37:10 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 17:36:40 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,18 @@ typedef struct s_map
 	char			*line;
 	long long		width;
 	struct s_map	*next;
-	
 }	t_map;
 
 typedef struct s_map_member
 {
 	int	width;
 	int	height;
-	int zero;
-	int collectable;
-	int player;
-	int exit;
+	int	zero;
+	int	collectable;
+	int	player;
+	int	exit;
 	int	collect_count;
-	int walk_count;
+	int	walk_count;
 	int	player_x;
 	int	player_y;
 }	t_map_member;
@@ -88,8 +87,10 @@ void	map_is_surrounded(t_map_member *map_member, t_map **so_map);
 void	map_is_valid(t_map_member *map_member);
 
 void	draw(t_map **so_map, t_map_member *map_member, t_images *images);
-void	draw_background(t_map **so_map, t_map_member *map_member, t_images *images);
-void	draw_contents(t_map **so_map, t_map_member *map_member, t_images *images);
+void	draw_background(t_map **so_map, \
+		t_map_member *map_member, t_images *images);
+void	draw_contents(t_map **so_map, \
+		t_map_member *map_member, t_images *images);
 void	get_images(t_images *images, t_map_member *map_member);
 
 int		move(int keycode, t_data *data);

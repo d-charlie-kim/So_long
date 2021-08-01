@@ -6,13 +6,13 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 06:03:55 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/30 19:32:45 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 17:37:02 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./so_long.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_map			*so_map;
 	t_map_member	map_member;
@@ -29,7 +29,6 @@ int main(int argc, char **argv)
 	data.images = images;
 	data.map_member = map_member;
 	mlx_key_hook(images.win, move, &data);
-	// mlx_mouse_hook(images.win, x_icon, &data);
 	mlx_hook(images.win, 17, 0, x_icon, &data);
 	mlx_loop(images.mlx);
 	return (0);
