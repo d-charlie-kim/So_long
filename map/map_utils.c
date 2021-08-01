@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:47:10 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/30 19:06:35 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 17:51:58 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_strcmp(char *str, char *str2)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 0;
@@ -34,7 +34,7 @@ void	ft_strcmp(char *str, char *str2)
 
 void	ft_putstr(char *str, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

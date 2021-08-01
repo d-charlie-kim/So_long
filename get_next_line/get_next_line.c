@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:18:14 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/30 19:04:01 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 17:48:21 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	ft_return_one(char **line, char **save, char *buffer, ssize_t size)
 	i = 0;
 	while (buffer[i] != '\n')
 		i++;
-	if (!(*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (i + 1)))))
+	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (i + 1)))))
+	if (!(*line))
 	{
 		free(*save);
 		ft_error("Malloc Error\n");
@@ -41,8 +42,8 @@ int	ft_return_one(char **line, char **save, char *buffer, ssize_t size)
 
 int	ft_return_zero(char **line, char **save, char *buffer, ssize_t size)
 {
-	if (!(*line = (char *)malloc(ft_strlen(*save)
-	+ (sizeof(char) * (size + 1)))))
+	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)))))
+	if (!(*line))
 	{
 		free(*save);
 		ft_error("Malloc Error\n");
@@ -57,8 +58,8 @@ int	ft_return_zero(char **line, char **save, char *buffer, ssize_t size)
 
 void	ft_repeat(char **temp, char **save, char *buffer, ssize_t size)
 {
-	if (!(*temp = (char *)malloc(ft_strlen(*save)
-	+ (sizeof(char) * (size + 1)))))
+	*temp = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)))))
+	if (!(*temp))
 	{
 		free(*save);
 		ft_error("Malloc Error\n");
@@ -78,14 +79,16 @@ int	ft_save(char **line, char **save)
 	i = 0;
 	while ((*save)[i] != '\n')
 		i++;
-	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
+	*line = (char *)malloc(sizeof(char) * (i + 1))))
+	if (!(*line))
 	{
 		free(*save);
 		ft_error("Malloc Error\n");
 	}
 	**line = '\0';
 	ft_memcpy(*line, *save, i);
-	if (!(temp = (char *)malloc(sizeof(char) * (ft_strlen(*save) - i))))
+	temp = (char *)malloc(sizeof(char) * (ft_strlen(*save) - i))))
+	if (!(temp))
 	{
 		free(*line);
 		free(*save);

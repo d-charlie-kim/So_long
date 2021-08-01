@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:58:58 by dokkim            #+#    #+#             */
-/*   Updated: 2021/07/29 12:01:23 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 17:51:02 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	map_is_surrounded(t_map_member *map_member, t_map **so_map)
 				i++;
 			}
 		}
-		else if ((temp->line)[0] != '1' || (temp->line)[map_member->width - 1] != '1')
+		else if ((temp->line)[0] != '1' \
+		|| (temp->line)[map_member->width - 1] != '1')
 			ft_error("Error : Map is not surrounded by wall");
 		temp = temp->next;
 		n++;
@@ -100,5 +101,5 @@ void	map_is_valid(t_map_member *map_member)
 void	ft_error(char *str)
 {
 	printf("%s\n", str);
-	exit(-1);
+	exit (-1);
 }
