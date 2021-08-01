@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:18:14 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/01 17:53:58 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 18:00:39 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_return_one(char **line, char **save, char *buffer, ssize_t size)
 	i = 0;
 	while (buffer[i] != '\n')
 		i++;
-	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (i + 1)))))
+	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (i + 1)))));
 	if (!(*line))
 	{
 		free(*save);
@@ -42,7 +42,7 @@ int	ft_return_one(char **line, char **save, char *buffer, ssize_t size)
 
 int	ft_return_zero(char **line, char **save, char *buffer, ssize_t size)
 {
-	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)))))
+	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)))));
 	if (!(*line))
 	{
 		free(*save);
@@ -58,7 +58,7 @@ int	ft_return_zero(char **line, char **save, char *buffer, ssize_t size)
 
 void	ft_repeat(char **temp, char **save, char *buffer, ssize_t size)
 {
-	*temp = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)))))
+	*temp = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)))));
 	if (!(*temp))
 	{
 		free(*save);
@@ -87,7 +87,7 @@ int	ft_save(char **line, char **save)
 	}
 	**line = '\0';
 	ft_memcpy(*line, *save, i);
-	temp = (char *)malloc(sizeof(char) * (ft_strlen(*save) - i))))
+	temp = (char *)malloc(sizeof(char) * (ft_strlen(*save) - i))));
 	if (!(temp))
 	{
 		free(*line);
