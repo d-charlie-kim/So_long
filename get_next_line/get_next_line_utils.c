@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:21:03 by dokkim            #+#    #+#             */
-/*   Updated: 2021/01/13 00:09:45 by dokkim           ###   ########.fr       */
+/*   Updated: 2021/08/01 18:10:38 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,12 @@ int	ft_check(char *str, ssize_t size)
 		i++;
 	}
 	return (0);
+}
+
+void	gnl_error(char *str, char *ptr1, char *ptr2)
+{
+	free(ptr1);
+	free(ptr2);
+	printf("%s\n", str);
+	exit(-1);
 }
