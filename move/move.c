@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 14:47:19 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/01 17:37:50 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 17:42:34 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,19 @@ void	move_left(t_data *data)
 	py = data->map_member.player_y;
 	if (flag == 0)
 	{
-		data->images.player = mlx_xpm_file_to_image(data->images.mlx, "./images/dao_left1.xpm", &(data->images.width), &(data->images.height));
+		data->images.player = mlx_xpm_file_to_image(data->images.mlx, \
+		"./images/dao_left1.xpm", &(data->images.width), &(data->images.height));
 		flag = 1;
 	}
 	else
 	{
-		data->images.player = mlx_xpm_file_to_image(data->images.mlx, "./images/dao_left2.xpm", &(data->images.width), &(data->images.height));
+		data->images.player = mlx_xpm_file_to_image(data->images.mlx,\
+		"./images/dao_left2.xpm", &(data->images.width), &(data->images.height));
 		flag = 0;		
 	}
 	temp = get_map_contents(data, px - 1, py);
-	if (temp == 'E' && data->map_member.collect_count == data->map_member.collectable)
+	if (temp == 'E' \
+	&& data->map_member.collect_count == data->map_member.collectable)
 	{
 		// mlx_destroy_image(data->images.mlx, data->images.img);
 		mlx_destroy_window(data->images.mlx, data->images.win);
@@ -122,7 +125,7 @@ char	get_map_contents(t_data *data, int dx, int dy)
 
 void	move_right(t_data *data)
 {
-	static int flag = 0;
+	static int	flag = 0;
 	int			px;
 	int			py;
 	char		temp;
@@ -166,7 +169,7 @@ void	move_right(t_data *data)
 
 void	move_down(t_data *data)
 {
-	static int flag = 0;
+	static int	flag = 0;
 	int			px;
 	int			py;
 	char		temp;
