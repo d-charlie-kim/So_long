@@ -1,48 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 10:47:10 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/01 17:54:02 by dokkim           ###   ########seoul.kr  */
+/*   Created: 2021/08/02 20:36:27 by dokkim            #+#    #+#             */
+/*   Updated: 2021/08/03 21:16:52 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
-#include "../get_next_line/get_next_line.h"
+#include "so_long.h"
 
-void	ft_strcmp(char *str, char *str2)
+void	data_init(t_data *data)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 3;
-	while (str[i])
-		i++;
-	i--;
-	while (j >= 0)
-	{
-		if (str[i] != str2[j])
-			ft_error("Error : Map file is not valid");
-		i--;
-		j--;
-	}
-}
-
-void	ft_putstr(char *str, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(fd, &str[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
+	map_member_init(&(data->map_member));
+	images_init(&(data->images));
+	data->so_map = NULL;
 }
 
 void	map_member_init(t_map_member *map_member)
@@ -57,6 +31,8 @@ void	map_member_init(t_map_member *map_member)
 	map_member->collect_count = 0;
 	map_member->player_x = 0;
 	map_member->player_y = 0;
+	map_member->enemy_x = 0;
+	map_member->enemy_y = 0;
 }
 
 void	images_init(t_images *images)
@@ -71,5 +47,9 @@ void	images_init(t_images *images)
 	images->collectable2 = NULL;
 	images->collectable3 = NULL;
 	images->enemy = NULL;
+	images->ballon = NULL;
+	images->ballon_effect = NULL;
 	images->exit = NULL;
+	images->height = 0;
+	images->width = 0;
 }

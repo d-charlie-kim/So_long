@@ -6,12 +6,12 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:18:14 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/01 18:13:19 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/02 20:54:24 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "../so_long.h"
+#include "../../includes/get_next_line.h"
+#include "../../includes/so_long.h"
 
 int	ft_return_one(char **line, char **save, char *buffer, ssize_t size)
 {

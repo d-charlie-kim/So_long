@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/10 18:38:34 by jaejeong          #+#    #+#              #
-#    Updated: 2021/07/29 15:55:19 by dokkim           ###   ########seoul.kr   #
+#    Updated: 2021/08/03 21:13:59 by dokkim           ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ NAME		= so_long
 OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(GFLAGS) # $(WFLAGS)
+CFLAGS		= $(INCFLAGS) $(GFLAGS) -g -fsanitize=address # $(WFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g -fsanitize=address
+INC			= -I ./includes
 
 ifeq ($(OS), Linux)
 	MLXFLAGS = -lmlx -lbsd -lXext -lX11
@@ -24,25 +25,69 @@ else
 	MLXFLAGS = -L$(MLXDIR) -lmlx -framework OpenGL -framework AppKit
 endif
 
-INCDIR		= include
 MLXDIR		= minilibx_opengl_20191021
 MLX			= $(MLXDIR)/libmlx.a
 
-SRCS		= ./so_long.c\
-			  ./draw/draw.c\
-			  ./get_next_line/get_next_line.c\
-			  ./get_next_line/get_next_line_utils.c\
-			  ./map/map_check.c\
-			  ./map/map_utils.c\
-			  ./map/mapping.c\
-			  ./move/move.c
+GNL_SRCS		= $(addprefix ./srcs/get_next_line/, \
+					get_next_line.c \
+					get_next_line_utils.c \
+					)
+
+DRAW_SRCS		= $(addprefix ./srcs/draw/, \
+					draw_contents.c \
+					draw_ballon.c \
+					draw_enemy.c \
+					draw_first.c \
+					draw_update.c \
+					get_images.c \
+					)
+
+LOOP_SRCS		= $(addprefix ./srcs/loop/, \
+					sprite.c \
+					)
+
+MAP_SRCS		= $(addprefix ./srcs/map/, \
+					map_update.c \
+					mapping.c \
+					)
+
+MOVE_SRCS		= $(addprefix ./srcs/move/, \
+					move.c \
+					move_left.c \
+					move_right.c \
+					move_up.c \
+					move_down.c \
+					)
+
+UTILS_SRCS		= $(addprefix ./srcs/utils/, \
+					init.c \
+					key_hook.c \
+					utils_map.c \
+					utils.c \
+					)
+
+VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
+					map_validate.c \
+					)
+
+SRCS		= ./srcs/main.c \
+				$(DRAW_SRCS) \
+				$(GNL_SRCS) \
+				$(LOOP_SRCS) \
+				$(MAP_SRCS) \
+				$(MOVE_SRCS) \
+				$(UTILS_SRCS) \
+				$(VALIDATE_SRCS) \
 
 OBJS	= $(SRCS:.c=.o)
+
+%.o		:	%.c
+		$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 all			: $(NAME)
 
 $(NAME)		: $(MLX) $(OBJS)
-	$(CC) -o $@ $(OBJS) $(CFLAGS) $(MLXFLAGS)
+	$(CC) $(OBJS) $(INC) $(CFLAGS) $(MLXFLAGS) -o $@
 
 $(MLX)		:
 	make -C $(MLXDIR) all

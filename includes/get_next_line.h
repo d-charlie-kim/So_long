@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 10:27:00 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/01 18:13:49 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/01 19:58:51 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "stdlib.h"
 # include "unistd.h"
+# include "stdio.h"
 
 int		get_next_line(int fd, char **line);
 int		ft_save(char **line, char **save);
