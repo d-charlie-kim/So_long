@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/10 18:38:34 by jaejeong          #+#    #+#              #
-#    Updated: 2021/08/04 16:06:46 by dokkim           ###   ########seoul.kr   #
+#    Updated: 2021/08/04 17:08:36 by dokkim           ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,6 @@ DRAW_SRCS		= $(addprefix ./srcs/draw/, \
 					draw_first.c \
 					draw_update.c \
 					get_images.c \
-					)
-
-LOOP_SRCS		= $(addprefix ./srcs/loop/, \
-					sprite.c \
 					)
 
 MAP_SRCS		= $(addprefix ./srcs/map/, \
