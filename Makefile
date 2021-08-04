@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/10 18:38:34 by jaejeong          #+#    #+#              #
-#    Updated: 2021/08/03 21:13:59 by dokkim           ###   ########seoul.kr   #
+#    Updated: 2021/08/04 16:06:46 by dokkim           ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,6 @@ GNL_SRCS		= $(addprefix ./srcs/get_next_line/, \
 
 DRAW_SRCS		= $(addprefix ./srcs/draw/, \
 					draw_contents.c \
-					draw_ballon.c \
-					draw_enemy.c \
 					draw_first.c \
 					draw_update.c \
 					get_images.c \
@@ -47,16 +45,16 @@ LOOP_SRCS		= $(addprefix ./srcs/loop/, \
 					)
 
 MAP_SRCS		= $(addprefix ./srcs/map/, \
-					map_update.c \
 					mapping.c \
 					)
 
 MOVE_SRCS		= $(addprefix ./srcs/move/, \
-					move.c \
 					move_left.c \
 					move_right.c \
 					move_up.c \
 					move_down.c \
+					move.c \
+					move_mapping.c \
 					)
 
 UTILS_SRCS		= $(addprefix ./srcs/utils/, \

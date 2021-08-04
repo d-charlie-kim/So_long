@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:52:32 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/03 21:40:01 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 08:52:21 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ void	get_map(int fd, t_map **so_map)
 void	put_map_member(t_map_member *map_member, t_map **so_map)
 {
 	int		i;
-	int		height;
 	t_map	*temp;
 
-	height = 0;
 	temp = *so_map;
 	while (temp != NULL)
 	{
@@ -79,7 +77,6 @@ void	put_map_member(t_map_member *map_member, t_map **so_map)
 			i++;
 		}
 		temp = temp->next;
-		height++;
+		map_member->height++;
 	}
-	map_member->height = height;
 }

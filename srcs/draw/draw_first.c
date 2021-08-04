@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 20:40:36 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/03 21:40:40 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 16:06:24 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	draw(t_data *data)
 {
-	// int		bpp;
-	// int		endian;
-	// int		size_line;
-	// int		*data;
-
-	// data = (int *)mlx_get_data_addr(images->road, &bpp, &size_line, &endian);
 	get_images(&(data->images), &(data->map_member));
 	draw_background(&(data->map_member), &(data->images));
 	draw_first(&(data->so_map), &(data->map_member), &(data->images));
@@ -27,9 +21,9 @@ void	draw(t_data *data)
 
 void	draw_first(t_map **so_map, t_map_member *map_member, t_images *images)
 {
-	int	dy;
+	int		dy;
 	t_map	*map_temp;
-	
+
 	map_temp = *so_map;
 	dy = 0;
 	while (map_temp != NULL)
@@ -40,7 +34,8 @@ void	draw_first(t_map **so_map, t_map_member *map_member, t_images *images)
 	}
 }
 
-void	draw_contents(t_map_member *map_member, t_images *images, int dy, char *line)
+void	draw_contents(t_map_member *map_member, t_images *images, \
+														int dy, char *line)
 {
 	int	i;
 	int	dx;
@@ -59,22 +54,23 @@ void	draw_contents(t_map_member *map_member, t_images *images, int dy, char *lin
 			draw_wall(map_member, images, dx, dy);
 		i++;
 		dx = dx + images->width;
-	}	
+	}
 }
 
 void	draw_background(t_map_member *map_member, t_images *images)
 {
 	int	dx;
 	int	dy;
-	
+
 	dx = 0;
 	while (dx <= (map_member->width - 1) * images->width)
 	{
 		dy = 0;
 		while (dy <= (map_member->height - 1) * images->height)
 		{
-	        mlx_put_image_to_window(images->mlx, images->win, images->road, dx, dy);
-	    	dy = dy + images->height;
+			mlx_put_image_to_window(images->mlx, images->win, \
+												images->road, dx, dy);
+			dy = dy + images->height;
 		}
 		dx = dx + images->width;
 	}

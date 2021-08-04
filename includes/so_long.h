@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:46:27 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/03 21:32:57 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 15:17:54 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 # include "so_keycode.h"
 # include "so_struct.h"
-
 
 // map
 void	mapping(char **argv, t_data *data);
@@ -40,19 +39,22 @@ void	map_is_valid(t_map_member map_member);
 void	draw(t_data *data);
 void	draw_first(t_map **so_map, t_map_member *map_member, t_images *images);
 void	draw_background(t_map_member *map_member, t_images *images);
-void	draw_contents(t_map_member *map_member, t_images *images, int dy, char *line);
+void	draw_contents(t_map_member *map_member, t_images *images, \
+													int dy, char *line);
 
 void	get_images(t_images *images, t_map_member *map_member);
 
 // draw contents
 void	draw_player(t_map_member *map_member, t_images *images, int dx, int dy);
-void	draw_collectable(t_map_member *map_member, t_images *images, int dx, int dy);
+void	draw_collectable(t_map_member *map_member, t_images *images, \
+															int dx, int dy);
 void	draw_exit(t_map_member *map_member, t_images *images, int dx, int dy);
 void	draw_wall(t_map_member *map_member, t_images *images, int dx, int dy);
 // void	draw_enemy(t_map_member *map_member, t_images *images, int dx, int dy);
 
 // key hook
 int		x_icon(int keycode, t_data *data);
+int		key_hook(int keycode, t_data *data);
 
 // utils
 void	ft_strcmp(char *str, char *str2);
@@ -68,13 +70,14 @@ void	images_init(t_images *images);
 
 // map update
 void	change_map(t_data *data, int dx, int dy);
+void	draw_update(t_data *data, int dx, int dy);
 
 // player move
-int		key_move(int keycode, t_data *data);
-void	move_up(t_data *data);
-void	move_down(t_data *data);
-void	move_right(t_data *data);
-void	move_left(t_data *data);
+void	move_up(t_data *data, int flag);
+void	move_down(t_data *data, int flag);
+void	move_right(t_data *data, int flag);
+void	move_left(t_data *data, int flag);
+void	move_player(t_data *data, int dx, int dy);
 
 // sprite animation loop
 int		sprite_loop(t_data *data);

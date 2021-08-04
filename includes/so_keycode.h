@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 11:06:38 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/03 11:07:31 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 16:08:10 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,4 @@
 # define DOWN 1
 # define UP 13
 
-# endif
+#endif
