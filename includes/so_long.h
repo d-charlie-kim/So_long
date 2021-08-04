@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:46:27 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/04 15:17:54 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 18:06:44 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <math.h>
-# include "../minilibx_mms_20200219/mlx.h"
+# include "../minilibx_opengl_20191021/mlx.h"
 
 # include "so_keycode.h"
 # include "so_struct.h"
@@ -46,14 +46,12 @@ void	get_images(t_images *images, t_map_member *map_member);
 
 // draw contents
 void	draw_player(t_map_member *map_member, t_images *images, int dx, int dy);
-void	draw_collectable(t_map_member *map_member, t_images *images, \
-															int dx, int dy);
-void	draw_exit(t_map_member *map_member, t_images *images, int dx, int dy);
-void	draw_wall(t_map_member *map_member, t_images *images, int dx, int dy);
-// void	draw_enemy(t_map_member *map_member, t_images *images, int dx, int dy);
+void	draw_collectable(t_images *images, int dx, int dy);
+void	draw_exit(t_images *images, int dx, int dy);
+void	draw_wall(t_images *images, int dx, int dy);
 
 // key hook
-int		x_icon(int keycode, t_data *data);
+int		x_icon(int keycode);
 int		key_hook(int keycode, t_data *data);
 
 // utils

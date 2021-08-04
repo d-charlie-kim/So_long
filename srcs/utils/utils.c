@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:47:10 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/03 19:02:48 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 18:29:25 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_strcmp(char *str, char *str2)
 	while (j >= 0)
 	{
 		if (str[i] != str2[j])
-			ft_error("Error : Map file is not valid");
+			ft_error("Error\n : Map file is not valid");
 		i--;
 		j--;
 	}
@@ -41,7 +41,7 @@ void	ft_lst_add(t_map **lst)
 {
 	*lst = (t_map *)malloc(sizeof(t_map));
 	if (!(lst))
-		ft_error("Malloc Error");
+		ft_error("Error\n : Malloc Error");
 	(*lst)->line = NULL;
 	(*lst)->next = NULL;
 	(*lst)->width = 0;

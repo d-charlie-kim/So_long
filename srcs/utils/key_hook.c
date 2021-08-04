@@ -6,14 +6,15 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 21:23:08 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/04 16:07:23 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 18:29:30 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	x_icon(int keycode, t_data *data)
+int	x_icon(int keycode)
 {
+	(void)keycode;
 	printf("END\n");
 	exit(0);
 	return (0);

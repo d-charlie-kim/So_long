@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 14:47:19 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/04 11:21:40 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 17:59:19 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	change_map(t_data *data, int dx, int dy)
 {
 	int		px;
 	int		py;
-	char	temp;
 	t_map	*map_temp;
 
 	map_temp = data->so_map;

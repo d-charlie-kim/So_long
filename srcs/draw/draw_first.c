@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 20:40:36 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/04 16:06:24 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2021/08/04 18:06:44 by dokkim           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	draw_contents(t_map_member *map_member, t_images *images, \
 	while (i < map_member->width)
 	{
 		if (line[i] == 'C')
-			draw_collectable(map_member, images, dx, dy);
+			draw_collectable(images, dx, dy);
 		else if (line[i] == 'P')
 			draw_player(map_member, images, dx, dy);
 		else if (line[i] == 'E')
-			draw_exit(map_member, images, dx, dy);
+			draw_exit(images, dx, dy);
 		else if (line[i] == '1')
-			draw_wall(map_member, images, dx, dy);
+			draw_wall(images, dx, dy);
 		i++;
 		dx = dx + images->width;
 	}

@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/10 18:38:34 by jaejeong          #+#    #+#              #
-#    Updated: 2021/08/04 17:08:36 by dokkim           ###   ########seoul.kr   #
+#    Updated: 2021/08/04 18:02:20 by dokkim           ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,8 @@ NAME		= so_long
 OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(GFLAGS) -g -fsanitize=address # $(WFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
-GFLAGS		= -g -fsanitize=address
 INC			= -I ./includes
 
 ifeq ($(OS), Linux)
