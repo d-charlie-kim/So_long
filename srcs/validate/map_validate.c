@@ -35,16 +35,12 @@ void	map_is_rectangular(t_map_member	*map_member, t_map **so_map)
 
 void	map_is_surrounded(t_map_member *map_member, t_map **so_map)
 {
-	int		i;
-	int		n;
 	t_map	*temp;
 
-	n = 0;
 	temp = *so_map;
 	first_last_line(temp->line, map_member->width);
 	while (temp != NULL && temp->next != NULL)
 	{
-		i = 0;
 		if ((temp->line)[0] != '1' \
 		|| (temp->line)[map_member->width - 1] != '1')
 			ft_error("Error\n : Map is not surrounded by wall");

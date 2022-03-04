@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME		= so_long
-OS			= Mac
+OS			= Linux
 
 CC			= gcc
 CFLAGS		= $(INCFLAGS) $(WFLAGS)

@@ -16,9 +16,7 @@
 void	mapping(char **argv, t_data *data)
 {
 	int		fd;
-	char	*str;
 
-	str = NULL;
 	ft_strcmp(argv[1], ".ber");
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
